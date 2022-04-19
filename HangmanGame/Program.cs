@@ -42,6 +42,20 @@ namespace HangmanGameConsole
             Console.Write("Please enter your guess: ");
             Console.ForegroundColor = oldColor;
 
+            for (int i = 0; i < mysteryWord.Length; i++)
+                guess[i] = mysteryWord[i];
+
+            while (true)
+            {
+                Char playerGuess =char.Parse(Console.ReadLine());
+                for (int i = 0; i < mysteryWord.Length; i++)
+                {
+                    if (playerGuess == mysteryWord[i])
+                        guess[i]=playerGuess;
+                }
+            }
+
+
 
             Console.SetCursorPosition(20, 25);
             Console.WriteLine("Thank you for playing");
